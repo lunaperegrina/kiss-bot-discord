@@ -1,8 +1,8 @@
 import { Elysia, t } from "elysia";
-import { describe, it, expect } from 'bun:test';
 import UserController from "./modules/users/controller";
 import PostController from "./modules/posts/controller";
 import { swagger } from '@elysiajs/swagger';
+import DiscordController from './modules/discord/controller';
 
 // ==================== APP ====================
 const app = new Elysia()
@@ -10,6 +10,7 @@ const app = new Elysia()
   .get('/', () => 'Hello Elysia')
   .use(UserController)
   .use(PostController)
+  .use(DiscordController)
   .listen(3000, ({ hostname, port }) => {
     console.log(`🦊 Elysia is running at ${hostname}:${port}`);
   });

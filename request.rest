@@ -32,3 +32,14 @@ X-Custom-Header: meu-valor
 
 ### Exemplo com parâmetros de query
 GET {{baseUrl}}/users/99?details=true&admin=false HTTP/1.1
+
+### Discord
+POST {{baseUrl}}/discord/interactions
+Content-Type: application/json
+
+{
+  "type": 2,
+  "data" : {
+    "name": "elysia"
+  }
+}

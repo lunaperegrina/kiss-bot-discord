@@ -3,12 +3,15 @@ import AuthService from "../auth/controller";
 
 const PostController = new Elysia({ prefix: '/posts' })
   .use(AuthService)
-  .get('/', () => ({
-    posts: [
-      { id: 1, title: 'First Post' },
-      { id: 2, title: 'Second Post' }
+  .get('/', () =>  {
+    return [
+      {
+        id: 1,
+        title: 'Sample Post',
+        content: 'This is a sample post content'
+      }
     ]
-  }), {
+  }, {
     detail: {
       tags: ['Posts'],
       description: 'Get all posts'
