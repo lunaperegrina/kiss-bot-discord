@@ -13,12 +13,18 @@ export const verifyKeyMiddleware = (publicKey: string) => {
         return 'Unauthorized'
       }
 
-      const isValid = verifyKey(rawBody, signature, timestamp, publicKey)
+      console.log("signature", signature)
+      console.log("timestamp", timestamp)
+      console.log("rawBody", rawBody)
+      console.log("publicKey", publicKey)
+
+      const isValid = await verifyKey(rawBody, signature, timestamp, publicKey)
       if (!isValid) {
         set.status = 401
         return 'Invalid request signature'
       }
 
+      console.log("isValid", isValid)
       // Store the raw body for later use
       request.json = () => JSON.parse(rawBody)
     })
