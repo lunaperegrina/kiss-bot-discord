@@ -30,14 +30,7 @@ export default new Elysia({ prefix: '/discord' })
           return {
             type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
             data: {
-              content: `💋 <@${targetUser}> recebeu um beijinho!`,
-              embeds: [
-                {
-                  image: {
-                    url: 'https://media.giphy.com/media/KH1CTZtw1iP3W/giphy.gif' // Um GIF de beijo!
-                  }
-                }
-              ]
+              content: `💋 <@${targetUser}> recebeu um beijinho! \nhttps://media.giphy.com/media/KH1CTZtw1iP3W/giphy.gif`,
             }
           };
         case 'somewone-kiss-somewone':
