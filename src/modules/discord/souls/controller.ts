@@ -2,8 +2,8 @@ import { Elysia, t } from 'elysia'
 import { InteractionType, InteractionResponseType } from 'discord-interactions'
 import { verifyKeyMiddleware } from '../../../middleware/discord'
 
-export default new Elysia({ prefix: '/discord' })
-  .use(verifyKeyMiddleware(process.env.DISCORD_BOT_PUBLIC_KEY as string))
+export default new Elysia({ prefix: '/souls' })
+  .use(verifyKeyMiddleware(process.env.DISCORD_BOT_SOULS_PUBLIC_KEY as string))
   .get('/ping', () => 'pong')
   .post('/interactions', ({ body }) => {
     // 1. Responde ao PING do Discord com PONG (OBRIGATÓRIO)

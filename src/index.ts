@@ -9,8 +9,8 @@ import DiscordSoulsController from './modules/discord/souls/controller';
 const app = new Elysia()
   .use(swagger())
   .get('/', () => 'Hello Elysia')
-  .use(UserController)
-  .use(PostController)
+  // .use(UserController)
+  // .use(PostController)
   .use(DiscordKissController)
   .use(DiscordSoulsController)
   .listen(3000, ({ hostname, port }) => {
